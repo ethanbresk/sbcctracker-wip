@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet"/>
@@ -51,15 +51,16 @@
         <section class="login-box" id="login">
           <h1>Login</h1>
           <hr>
-          <form class="login-form">
+          <form id="log-form" class="login-form" action="../auth/login" method="POST">
             <h2>Email</h2>
-            <input type="text" class="enter-email" placeholder="johndoe@gmail.com" required>
+            <input maxlength="50" type="email" class="enter-email" placeholder="johndoe@gmail.com" name="email" required>
             <h2>Password</h2>
-            <input type="text" class="enter-password" placeholder="Enter your password" required>
+            <input id="password" type="password" class="enter-password" placeholder="Enter your password" name="password" required>
             <a href="#">forgot your password?</a>
-            <div class="captcha-login">
+            <!--<div class="captcha-login">
               <h1>reCAPTCHA Here</h1>
-            </div>
+            </div>-->
+            <div class="open-space-login"><h4 id="login-error">Invalid email or password!</h4></div>
             <div class="button-underline">
               <button type="submit">Login</button>
             </div>

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Create Account</title>
-    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet"/>
@@ -51,21 +51,23 @@
         <section class="create-account-box" id="register">
           <h1>Create Account</h1>
           <hr>
-          <form class="create-account-form">
+          <form id="reg-form" class="create-account-form" action="../auth/register" method="POST">
             <h2>Email</h2>
-            <input type="text" class="enter-email" placeholder="johndoe@gmail.com" required>
+            <input maxlength="50" id="email" type="email" class="enter-email" placeholder="johndoe@gmail.com" name="email" required>
             <h2>Password</h2>
-            <input type="password" class="enter-password" placeholder="Enter a password" required>
-            <div class="captcha-create-account">
+            <input id="passwordReg" type="password" class="enter-password" placeholder="Enter a password" name="passwordReg" required>
+            <h2>Confirm Password</h2>
+            <input id="passwordConfirm" type="password" class="enter-password" placeholder="Confirm your password" name="passwordConfirm" required>
+            <!--<div class="captcha-create-account">
               <h1>reCAPTCHA Here</h1>
-            </div>
+            </div>-->
+            <div class="open-space-register"><h4 id="error">Passwords do not match!</h4></div>
             <div class="button-underline">
               <button type="submit">Create Account</button>
             </div>
             <div class="already-account-link">
               <h3>Already have an account?</h3><a href="../login/">login</a>
             </div>
-          </form>
           </form>
         </section>
       </div>
